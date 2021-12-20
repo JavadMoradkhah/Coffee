@@ -1,18 +1,27 @@
 @import "layout";
 
+/* Variables index.scss */
+$z-index-header: 100;
+$z-index-drawer-shadow: 900;
+$z-index-drawer: 999;
+
+body {
+  background-color: rgb(10, 62, 122);
+}
+
 /* Lists */
 .list {
   padding: 0;
   list-style-type: none;
-}
 
-.list--inline {
-  display: flex;
-  align-items: center;
-}
+  &--inline {
+    display: flex;
+    align-items: center;
+  }
 
-.list--inline .list__item {
-  margin: 0 1.4rem;
+  &--inline &__item {
+    margin: 0 1.4rem;
+  }
 }
 
 /* Grids */
@@ -56,25 +65,23 @@
 .block {
   width: 100%;
   padding: 2rem;
-}
 
-@media screen and (min-width: 768px) {
-  .block {
+  @media screen and (min-width: 768px) {
     padding: 4rem 8rem;
   }
-}
 
-.block--primary {
-  color: #fff;
-  background-color: $color-primary;
-}
+  &--primary {
+    color: #fff;
+    background-color: $color-primary;
+  }
 
-.block--primary .block__heading {
-  color: #fff;
-}
+  &--primary &__heading {
+    color: #fff;
+  }
 
-.block--primary .block__description {
-  color: rgba(255, 255, 255, 0.8);
+  &--primary &__description {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .block__heading,
@@ -88,4 +95,185 @@
 
 .block__description {
   color: $color-section-description;
+}
+
+/* Logo */
+.logo {
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__app-name {
+    margin-left: 10px;
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1;
+    font-weight: 700;
+  }
+}
+
+/* Header */
+.app-header {
+  width: 100%;
+  position: absolute;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: $z-index-header;
+
+  @media screen and (min-width: 768px) {
+    padding: 2rem 4rem;
+  }
+}
+
+/* Navigation */
+.navigation {
+  width: 260px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in;
+  z-index: $z-index-drawer;
+
+  @media screen and (min-width: 768px) {
+    width: fit-content;
+    height: fit-content;
+    position: static;
+    background-color: transparent;
+    transform: none;
+    transition: none;
+    z-index: initial;
+  }
+
+  &__toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 4rem;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.navigation.open {
+  transform: translateX(0);
+}
+
+.mobile-body-overly {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &.show {
+    display: block;
+  }
+}
+
+.navigation__list {
+  display: block;
+  padding: 2rem;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    padding: 0;
+  }
+
+  > .list__item {
+    color: #fff;
+    margin: 1rem 0;
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
+      padding: 1rem 1rem;
+    }
+  }
+
+  & .dropdown__header:hover {
+    color: $color-primary;
+  }
+
+  a {
+    display: inline-block;
+    color: #fff;
+    padding: 1rem;
+    transition: color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0;
+    outline: 0;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+
+    .icon {
+      margin-left: 10px;
+      font-size: 2.4rem;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+
+    @media screen and (min-width: 768px) {
+      left: -25%;
+      padding: 1rem;
+      border-radius: 0.6rem;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &.expanded {
+    .dropdown__list {
+      display: block;
+    }
+
+    .dropdown__header .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &:hover &__list {
+      display: block;
+    }
+  }
 }

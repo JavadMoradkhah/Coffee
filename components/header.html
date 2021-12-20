@@ -1,0 +1,35 @@
+<header class="app-header">
+    <a href="/" class="logo">
+        <img class="logo__image" src="assets/logo/logo_32.png" srcset="assets/logo/logo_24.png 24w,
+            assets/logo/logo_32.png 32w,
+            assets/logo/logo_64.png 64w" alt="">
+        <span class="logo__app-name">Coffee</span>
+    </a>
+    <button class="navigation__toggler" onclick="toggleDrawer()">
+        <i id="drawerTogglerIcon" class="bx bx-menu"></i>
+    </button>
+    <nav id="navigationDrawer" class="navigation">
+        <ul class="list list--inline navigation__list">
+            <li class="list__item"><a href="#">Home</a></li>
+            <li class="list__item"><a href="#">About</a></li>
+            <li class="list__item"><a href="#">Coffee</a></li>
+            <li class="list__item"><a href="#">Review</a></li>
+            <li class="list__item"><a href="#">Blog</a></li>
+            <li class="list__item dropdown">
+                <button class="dropdown__header" href="#">
+                    <span>Pages</span>
+                    <i class="bx bx-chevron-down icon"></i>
+                </button>
+                <ul class="list dropdown__list">
+                    <li class="list__item dropdown__list-item">
+                        <a href="#">Generic</a>
+                    </li>
+                    <li class="list__item dropdown__list-item">
+                        <a href="#">Elements</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div id="mobile-body-overly" class="mobile-body-overly"></div>
