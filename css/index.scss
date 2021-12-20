@@ -1,1 +1,91 @@
 @import "layout";
+
+/* Lists */
+.list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list--inline {
+  display: flex;
+  align-items: center;
+}
+
+.list--inline .list__item {
+  margin: 0 1.4rem;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+.grid--1x2,
+.grid--1x3,
+.grid--1x4,
+.grid--2x3,
+.grid--3x3 {
+  grid-template-columns: 100%;
+}
+
+.grid--3x3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid--2x3 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--1x4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid--1x3,
+  .grid--2x3,
+  .grid--3x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Blocks */
+.block {
+  width: 100%;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .block {
+    padding: 4rem 8rem;
+  }
+}
+
+.block--primary {
+  color: #fff;
+  background-color: $color-primary;
+}
+
+.block--primary .block__heading {
+  color: #fff;
+}
+
+.block--primary .block__description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.block__heading,
+.block__description {
+  text-align: center;
+}
+
+.block__heading {
+  margin: 4rem auto 1rem;
+}
+
+.block__description {
+  color: $color-section-description;
+}

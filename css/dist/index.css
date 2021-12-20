@@ -24,14 +24,16 @@ h1,
 h2,
 h3 {
   font-weight: 700;
+  margin: 0;
+  color: #000;
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.6rem;
 }
 
 h3 {
@@ -43,10 +45,10 @@ h3 {
     font-size: 10rem;
   }
   h2 {
-    font-size: 6rem;
+    font-size: 3.4rem;
   }
   h3 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -118,5 +120,43 @@ li {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Blocks */
+.block {
+  width: 100%;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .block {
+    padding: 4rem 8rem;
+  }
+}
+
+.block--primary {
+  color: #fff;
+  background-color: #b68834;
+}
+
+.block--primary .block__heading {
+  color: #fff;
+}
+
+.block--primary .block__description {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.block__heading,
+.block__description {
+  text-align: center;
+}
+
+.block__heading {
+  margin: 4rem auto 1rem;
+}
+
+.block__description {
+  color: #777;
 }
 /*# sourceMappingURL=index.css.map */

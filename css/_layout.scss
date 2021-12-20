@@ -28,14 +28,16 @@ h1,
 h2,
 h3 {
   font-weight: 700;
+  margin: 0;
+  color: $color-headings;
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 4rem;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: 3.6rem;
 }
 
 h3 {
@@ -48,11 +50,11 @@ h3 {
   }
 
   h2 {
-    font-size: 6rem;
+    font-size: 3.4rem;
   }
 
   h3 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 }
 
@@ -63,56 +65,4 @@ button,
 input,
 li {
   font-size: 1.6rem;
-}
-
-/* Lists */
-.list {
-  padding: 0;
-  list-style-type: none;
-}
-
-.list--inline {
-  display: flex;
-  align-items: center;
-}
-
-.list--inline .list__item {
-  margin: 0 1.4rem;
-}
-
-/* Grids */
-.grid {
-  display: grid;
-}
-
-.grid--1x2,
-.grid--1x3,
-.grid--1x4,
-.grid--2x3,
-.grid--3x3 {
-  grid-template-columns: 100%;
-}
-
-.grid--3x3 {
-  grid-template-rows: repeat(3, 1fr);
-}
-
-.grid--2x3 {
-  grid-template-rows: repeat(2, 1fr);
-}
-
-@media screen and (min-width: 768px) {
-  .grid--1x2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid--1x4 {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .grid--1x3,
-  .grid--2x3,
-  .grid--3x3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
