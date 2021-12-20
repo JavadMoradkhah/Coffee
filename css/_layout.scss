@@ -11,6 +11,11 @@ $color-section-description: #777;
   box-sizing: border-box;
 }
 
+html {
+  /* 62.5% of 16px => 10px */
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -25,6 +30,32 @@ h3 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 10rem;
+  }
+
+  h2 {
+    font-size: 6rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+}
+
 /* Lists */
 .list {
   padding: 0;
@@ -34,4 +65,41 @@ h3 {
 .list--inline {
   display: flex;
   align-items: center;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+}
+
+.grid--1x2,
+.grid--1x3,
+.grid--1x4,
+.grid--2x3,
+.grid--3x3 {
+  grid-template-columns: 100%;
+}
+
+.grid--3x3 {
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid--2x3 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--1x4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid--1x3,
+  .grid--2x3,
+  .grid--3x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
