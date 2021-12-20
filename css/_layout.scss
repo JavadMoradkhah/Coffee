@@ -1,0 +1,25 @@
+/* Variables */
+$color-primary: #b68834;
+$color-headings: #000;
+$color-section-subtitle: #777;
+$color-section-description: #777;
+
+/* Basic Style */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  line-height: 1.25;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+}
