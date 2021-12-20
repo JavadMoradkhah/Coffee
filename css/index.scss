@@ -5,10 +5,6 @@ $z-index-header: 100;
 $z-index-drawer-shadow: 900;
 $z-index-drawer: 999;
 
-body {
-  background-color: rgb(10, 62, 122);
-}
-
 /* Lists */
 .list {
   padding: 0;
@@ -275,5 +271,29 @@ body {
     &:hover &__list {
       display: block;
     }
+  }
+}
+
+/* Hero Block */
+.block-hero {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 2;
   }
 }
