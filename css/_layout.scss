@@ -3,6 +3,7 @@ $color-primary: #b68834;
 $color-headings: #000;
 $color-section-subtitle: #777;
 $color-section-description: #777;
+$color-nav-drawer-bg: rgb(21, 26, 37);
 
 /* Basic Style */
 *,
@@ -29,6 +30,7 @@ h2,
 h3 {
   font-weight: 700;
   margin: 0;
+  padding: 0;
   color: $color-headings;
 }
 
@@ -37,7 +39,7 @@ h1 {
 }
 
 h2 {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
 }
 
 h3 {
@@ -46,7 +48,7 @@ h3 {
 
 @media screen and (min-width: 768px) {
   h1 {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 
   h2 {
