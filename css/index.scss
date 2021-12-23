@@ -31,10 +31,11 @@ $z-index-drawer: 999;
 .grid--2x3,
 .grid--3x3 {
   grid-template-columns: 100%;
+  row-gap: 2rem;
 }
 
 .grid--3x3 {
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
 }
 
 .grid--2x3 {
@@ -47,6 +48,19 @@ $z-index-drawer: 999;
   }
 
   .grid--1x4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--1x3,
+  .grid--2x3,
+  .grid--3x3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x4 {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -54,6 +68,7 @@ $z-index-drawer: 999;
   .grid--2x3,
   .grid--3x3 {
     grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 
@@ -63,7 +78,7 @@ $z-index-drawer: 999;
   padding: 2rem;
 
   @media screen and (min-width: 768px) {
-    padding: 4rem 8rem;
+    padding: 2rem 4rem;
   }
 
   &--primary {
@@ -91,6 +106,8 @@ $z-index-drawer: 999;
   &__subtitle {
     font-size: 2rem;
     font-weight: 400;
+    color: $color-section-description;
+    text-align: center;
   }
 
   &__description {
@@ -351,6 +368,44 @@ $z-index-drawer: 999;
 
     .btn {
       text-transform: uppercase;
+    }
+  }
+}
+
+/* Coffee Types Block */
+.coffee-types-block {
+  .list {
+    margin-top: 2rem;
+  }
+
+  .coffee-item {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 60px 5px #d4d4d4;
+
+    &__header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__name {
+      color: #000;
+      font-weight: 600;
+      font-size: 2.5rem;
+    }
+
+    &__price {
+      color: $color-primary;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    &__description {
+      display: block;
+      width: 100%;
+      color: $color-section-description;
     }
   }
 }

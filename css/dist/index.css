@@ -99,11 +99,12 @@ a {
 .grid--3x3 {
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
+  row-gap: 2rem;
 }
 
 .grid--3x3 {
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-rows: (auto)[3];
+      grid-template-rows: repeat(3, auto);
 }
 
 .grid--2x3 {
@@ -117,6 +118,20 @@ a {
         grid-template-columns: repeat(2, 1fr);
   }
   .grid--1x4 {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .grid--1x3,
+  .grid--2x3,
+  .grid--3x3 {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x4 {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
   }
@@ -125,6 +140,7 @@ a {
   .grid--3x3 {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 
@@ -136,7 +152,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .block {
-    padding: 4rem 8rem;
+    padding: 2rem 4rem;
   }
 }
 
@@ -164,6 +180,8 @@ a {
 .block__subtitle {
   font-size: 2rem;
   font-weight: 400;
+  color: #777;
+  text-align: center;
 }
 
 .block__description {
@@ -493,5 +511,48 @@ a {
 
 .block-hero__content .btn {
   text-transform: uppercase;
+}
+
+/* Coffee Types Block */
+.coffee-types-block .list {
+  margin-top: 2rem;
+}
+
+.coffee-types-block .coffee-item {
+  padding: 2rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0 0 60px 5px #d4d4d4;
+          box-shadow: 0 0 60px 5px #d4d4d4;
+}
+
+.coffee-types-block .coffee-item__header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.coffee-types-block .coffee-item__name {
+  color: #000;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.coffee-types-block .coffee-item__price {
+  color: #b68834;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.coffee-types-block .coffee-item__description {
+  display: block;
+  width: 100%;
+  color: #777;
 }
 /*# sourceMappingURL=index.css.map */
