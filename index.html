@@ -16,6 +16,341 @@
 
 <body>
 
+    <header class="app-header">
+        <a href="/" class="logo">
+            <img class="logo__image" src="assets/logo/logo_32.png" srcset="assets/logo/logo_24.png 24w,
+                assets/logo/logo_32.png 32w,
+                assets/logo/logo_64.png 64w" alt="">
+            <span class="logo__app-name">Coffee</span>
+        </a>
+        <button class="navigation__toggler" onclick="toggleDrawer()">
+            <i id="drawerTogglerIcon" class="bx bx-menu"></i>
+        </button>
+        <nav id="navigationDrawer" class="navigation">
+            <ul class="list list--inline navigation__list">
+                <li class="list__item"><a href="#">Home</a></li>
+                <li class="list__item"><a href="#">About</a></li>
+                <li class="list__item"><a href="#">Coffee</a></li>
+                <li class="list__item"><a href="#">Review</a></li>
+                <li class="list__item"><a href="#">Blog</a></li>
+                <li class="list__item dropdown">
+                    <button class="dropdown__header" href="#">
+                        <span>Pages</span>
+                        <i class="bx bx-chevron-down icon"></i>
+                    </button>
+                    <ul class="list dropdown__list">
+                        <li class="list__item dropdown__list-item">
+                            <a href="#">Generic</a>
+                        </li>
+                        <li class="list__item dropdown__list-item">
+                            <a href="#">Elements</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="block-hero">
+        <picture>
+            <source type="image/webp" srcset="assets/image/coffee_320.webp 320w,
+            assets/image/coffee_480w.webp 480w,
+            assets/image/coffee_960w.webp 960w, 
+            assets/image/coffee_1280w.webp 1280w, 
+            assets/image/coffee_1920w.webp 1920w">
+            <source type="image/jpg" srcset="assets/image/coffee_320.jpg 320w,
+                        assets/image/coffee_480w.jpg 480w,
+                        assets/image/coffee_960w.jpg 960w, 
+                        assets/image/coffee_1280w.jpg 1280w, 
+                        assets/image/coffee_1920w.jpg 1920w">
+            <img class="block-hero__image" src="assets/image/coffee_960w.jpg 960w" alt="">
+        </picture>
+        <div class="block-hero__content">
+            <h2 class="block__subtitle">NOW YOU CAN FEEL THE ENERGY</h2>
+            <h1 class="block__heading">Start your day with a black Coffee</h1>
+            <a href="#" class="btn btn--primary btn--medium">Buy Now</a>
+        </div>
+    </section>
+
+    <section class="block telecast-block">
+        <div class="grid grid--1x2">
+            <div class="telecast-block__image">
+                <picture>
+                    <source type="image/webp" srcset="assets/image/coffee_machine_320w.webp 320w,
+                    assets/image/coffee_machine_640w.webp 640w,
+                    assets/image/coffee_machine_1280w.webp 1280w">
+                    <source type="image/jpg" srcset="assets/image/coffee_machine_320w.jpg 320w,
+                    assets/image/coffee_machine_640w.jpg 640w,
+                    assets/image/coffee_machine_1280w.jpg 1280w">
+                    <img src="assets/image/coffee_machine_640w.jpg" alt="Coffee Machine">
+                </picture>
+            </div>
+            <div class="telecast-block__content">
+                <h3 class="block__hint">LIVE COFFEE MAKING PROCESS.</h3>
+                <h2 class="block__heading">We Telecast Our Coffee Making Live</h2>
+                <h3 class="block__subtitle">We are here to listen from you deliver exellence</h3>
+                <p class="block__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut
+                    labore et dolore magna aliqua. Ut enim ad minim.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="block coffee-types-block">
+        <h2 class="block__heading">What kind of Coffee we serve for you</h2>
+        <h3 class="block__subtitle">Who are in extremely love with eco friendly system.</h3>
+        <ul class="list grid grid--3x3">
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Cappuccino</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Americano</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Espresso</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Macchiato</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Mocha</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Coffee Latte</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Piccolo Latte</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Ristretto</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+            <li class="list__item coffee-item">
+                <div class="coffee-item__header">
+                    <h3 class="coffee-item__name">Affogato</h3>
+                    <span class="coffee-item__price">$49</span>
+                </div>
+                <p class="coffee-item__description">
+                    Usage of the Internet is becoming more common due to rapid advance.
+                </p>
+            </li>
+        </ul>
+    </section>
+
+    <div class="block coffee-images-block">
+        <h2 class="block__heading">What kind of Coffee we serve for you</h2>
+        <h3 class="block__subtitle">Who are in extremely love with eco friendly system.</h3>
+        <div class="grid grid--3x3">
+            <div class="coffee-images-block__image">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/image/cup_of_black_coffee_and_coffee_beans_320w.webp 320w, assets/image/cup_of_black_coffee_and_coffee_beans_640w.webp 640w">
+                    <source type="image/png"
+                        srcset="assets/image/cup_of_black_coffee_and_coffee_beans_320w.png 320w, assets/image/cup_of_black_coffee_and_coffee_beans_640w.png 640w">
+                    <img src="assets/image/cup_of_black_coffee_and_coffee_beans_320w.png"
+                        alt="Cup of black coffee and coffee beans">
+                </picture>
+            </div>
+            <div class="coffee-images-block__image">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/image/two_person_in_front_of_coffee_table_320w.webp 320w, assets/image/two_person_in_front_of_coffee_table_640w.webp 640w">
+                    <source type="image/png"
+                        srcset="assets/image/two_person_in_front_of_coffee_table_320w.png 320w, assets/image/two_person_in_front_of_coffee_table_640w.png 640w">
+                    <img src="assets/image/two_person_in_front_of_coffee_table_320w.png"
+                        alt="Two person in front of coffee table">
+                </picture>
+            </div>
+            <div class="coffee-images-block__image">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/image/black_espresso_maker_with_cup_320w.webp 320w, assets/image/black_espresso_maker_with_cup_640w.webp 640w">
+                    <source type="image/png"
+                        srcset="assets/image/black_espresso_maker_with_cup_320w.png 320w, assets/image/black_espresso_maker_with_cup_640w.png 640w">
+                    <img src="assets/image/black_espresso_maker_with_cup_320w.png" alt="Black espresso maker with cup">
+                </picture>
+            </div>
+            <div class="coffee-images-block__image">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/image/filling_clear_glass_mug_with_coffee_320w.webp 320w, assets/image/filling_clear_glass_mug_with_coffee_640w.webp 640w">
+                    <source type="image/png"
+                        srcset="assets/image/filling_clear_glass_mug_with_coffee_320w.png 320w, assets/image/filling_clear_glass_mug_with_coffee_640w.png 640w">
+                    <img src="assets/image/filling_clear_glass_mug_with_coffee_320w.png"
+                        alt="Filling clear glass mug with coffee">
+                </picture>
+            </div>
+            <div class="coffee-images-block__image">
+                <picture>
+                    <source type="image/webp"
+                        srcset="assets/image/closeup_of_coffee_cup_320w.webp 320w, assets/image/closeup_of_coffee_cup_640w.webp 640w">
+                    <source type="image/png"
+                        srcset="assets/image/closeup_of_coffee_cup_320w.png 320w, assets/image/closeup_of_coffee_cup_640w.png 640w">
+                    <img src="assets/image/closeup_of_coffee_cup_320w.png" alt="Closeup of coffee cup">
+                </picture>
+            </div>
+        </div>
+    </div>
+
+    <section class="block block--primary statistics-block">
+        <h2 class="block__heading">What kind of Coffee we serve for you</h2>
+        <h3 class="block__subtitle">Who are in extremely love with eco friendly system.</h3>
+        <ul class="list grid grid--1x4">
+            <li class="list__item">
+                <span class="statistics-block__amount">2536</span>
+                <h3 class="statistics-block__title">Happy Client</h3>
+            </li>
+            <li class="list__item">
+                <span class="statistics-block__amount">7562</span>
+                <h3 class="statistics-block__title">Total Projects</h3>
+            </li>
+            <li class="list__item">
+                <span class="statistics-block__amount">2013</span>
+                <h3 class="statistics-block__title">Cups Coffee</h3>
+            </li>
+            <li class="list__item">
+                <span class="statistics-block__amount">10536</span>
+                <h3 class="statistics-block__title">Total Submitted</h3>
+            </li>
+        </ul>
+    </section>
+
+    <section class="block posts-block">
+        <h2 class="block__heading">What kind of Coffee we serve for you</h2>
+        <p class="block__description">Who are in extremely love with eco friendly system.</p>
+        <ul class="list grid grid--1x2">
+            <li class="list__item post">
+                <div class="post__image">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="assets/image/performing_coffee_art_320w.webp 320w, assets/image/performing_coffee_art_640w.webp 640w">
+                        <source type="image/png"
+                            srcset="assets/image/performing_coffee_art_320w.png 320w, assets/image/performing_coffee_art_640w.png 640w">
+                        <img src="assets/image/performing_coffee_art_320w.png" alt="Performing coffee art">
+                </div>
+                <h3 class="post__title">Portable latest Fashion for young women</h3>
+                <p class="post__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+                <date class="post__date">31st January, 2018</date>
+            </li>
+            <li class="list__item post">
+                <div class="post__image">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="assets/image/black_coffee_in_stainless_steel_scoop_320w.webp 320w, assets/image/black_coffee_in_stainless_steel_scoop_640w.webp 640w">
+                        <source type="image/png"
+                            srcset="assets/image/black_coffee_in_stainless_steel_scoop_320w.png 320w, assets/image/black_coffee_in_stainless_steel_scoop_640w.png 640w">
+                        <img src="assets/image/black_coffee_in_stainless_steel_scoop_320w.png"
+                            alt="Black coffee in stainless steel scoop">
+                </div>
+                <h3 class="post__title">Portable latest Fashion for young women</h3>
+                <p class="post__description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore.
+                </p>
+                <date class="post__date">31st January, 2018</date>
+            </li>
+        </ul>
+    </section>
+
+    <footer class="app-footer grid grid--1x3">
+        <div class="section">
+            <h2 class="app-footer__heading">About Us</h2>
+            <p class="app-footer__description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                dolore magna aliqua.
+            </p>
+            <p class="app-footer__copyright">Copyright &copy;2021 All rights reserved</p>
+        </div>
+        <div class="section">
+            <h2 class="app-footer__heading">Newsletter</h2>
+            <p class="app-footer__description">
+                Stay update with our latest
+            </p>
+            <form class="app-footer__form" method="post">
+                <div class="form-control">
+                    <input type="email" class="form-control__input" placeholder="Your Email..." minlength="10"
+                        maxlength="60" required>
+                    <button class="form-control__submit-btn">
+                        <i class="bx bx-chevron-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <h2 class="app-footer__heading">Follow Us</h2>
+            <p class="app-footer__description">
+                Let us be social
+            </p>
+            <div class="app-footer__social_media">
+                <a href="https://www.instagram.com/" class="sm-link">
+                    <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="https://twitter.com/" class="sm-link">
+                    <i class="bx bxl-twitter"></i>
+                </a>
+                <a href="https://www.linkedin.com/" class="sm-link">
+                    <i class="bx bxl-linkedin"></i>
+                </a>
+                <a href="https://telegram.org/" class="sm-link">
+                    <i class="bx bxl-telegram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="mobile-body-overly" class="mobile-body-overly"></div>
+
     <script src="js/index.js"></script>
 </body>
 
