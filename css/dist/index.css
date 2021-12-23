@@ -773,4 +773,111 @@ a {
   color: #000;
   font-size: 1.4rem;
 }
+
+/* Footer */
+.app-footer {
+  width: 100%;
+  color: #fff;
+  background-color: #31373e;
+}
+
+.app-footer.grid {
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+}
+
+@media screen and (min-width: 992px) {
+  .app-footer.grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.app-footer .section {
+  padding: 4rem 2rem;
+}
+
+.app-footer__heading {
+  font-size: 3rem;
+  color: inherit;
+}
+
+.app-footer__description {
+  color: #e0e0e0;
+}
+
+.app-footer .form-control {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: #fff;
+}
+
+.app-footer .form-control__input {
+  padding: 1rem 1.4rem;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.app-footer .form-control__submit-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  border: 0;
+  outline: 0;
+  background-color: #b68834;
+}
+
+.app-footer .form-control__submit-btn:hover {
+  cursor: pointer;
+  background-color: #cda150;
+}
+
+.app-footer__social_media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-footer__social_media .sm-link {
+  margin-right: 2rem;
+  font-size: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.app-footer__social_media .sm-link:hover {
+  color: #b68834;
+}
+
+.app-footer__copyright {
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
 /*# sourceMappingURL=index.css.map */

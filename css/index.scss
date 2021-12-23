@@ -589,3 +589,84 @@ $z-index-drawer: 999;
     }
   }
 }
+
+/* Footer */
+.app-footer {
+  width: 100%;
+  color: #fff;
+  background-color: $color-footer-bg;
+
+  &.grid {
+    grid-template-columns: 100%;
+
+    @media screen and (min-width: 992px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    color: inherit;
+  }
+
+  &__description {
+    color: #e0e0e0;
+  }
+
+  .form-control {
+    width: fit-content;
+    display: flex;
+    align-items: stretch;
+    background-color: #fff;
+
+    &__input {
+      padding: 1rem 1.4rem;
+      border: 0;
+      outline: 0;
+      background-color: transparent;
+    }
+
+    &__submit-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 3rem;
+      border: 0;
+      outline: 0;
+      background-color: $color-primary;
+
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($color: $color-primary, $amount: 10);
+      }
+    }
+  }
+
+  &__social_media {
+    display: flex;
+    align-items: center;
+
+    .sm-link {
+      margin-right: 2rem;
+      font-size: 2.4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__copyright {
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
