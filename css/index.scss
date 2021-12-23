@@ -547,3 +547,45 @@ $z-index-drawer: 999;
     font-weight: 300;
   }
 }
+
+/* Posts Block */
+.posts-block {
+  .grid {
+    margin-top: 4rem;
+    row-gap: 4rem;
+
+    @media screen and (min-width: 768px) {
+      gap: 0 4rem;
+      padding: 2rem 4rem;
+    }
+  }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+
+    &__image {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 1rem;
+      }
+    }
+
+    &__title {
+      margin-top: 1rem;
+    }
+
+    &__description {
+      color: #8f8f8f;
+      font-size: 1.8rem;
+    }
+
+    &__date {
+      font-weight: 600;
+      color: #000;
+      font-size: 1.4rem;
+    }
+  }
+}
