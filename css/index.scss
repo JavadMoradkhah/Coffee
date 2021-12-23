@@ -90,8 +90,9 @@ $z-index-drawer: 999;
     color: #fff;
   }
 
-  &--primary &__description {
-    color: rgba(255, 255, 255, 0.8);
+  &--primary &__description,
+  &--primary &__subtitle {
+    color: rgba(236, 236, 236, 0.8);
   }
 
   &__heading,
@@ -518,5 +519,31 @@ $z-index-drawer: 999;
         grid-row: 2 / span 2;
       }
     }
+  }
+}
+
+/* Statistics Block */
+.statistics-block {
+  .list {
+    margin-top: 4rem;
+  }
+
+  .list__item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__amount {
+    font-size: 5rem;
+  }
+
+  &__title {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 300;
   }
 }
