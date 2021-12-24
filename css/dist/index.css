@@ -329,7 +329,7 @@ a {
 @media screen and (min-width: 768px) {
   .navigation__list > .list__item {
     margin: 0;
-    padding: 1rem 1rem;
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -520,6 +520,10 @@ a {
   .block-hero__content .block__heading {
     width: 14ch;
   }
+}
+
+.block-hero__content .block__subtitle {
+  text-align: start;
 }
 
 .block-hero__content .btn {
@@ -794,7 +798,13 @@ a {
 }
 
 .app-footer .section {
-  padding: 4rem 2rem;
+  padding: 2rem 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .app-footer .section {
+    padding: 4rem 2rem;
+  }
 }
 
 .app-footer__heading {
@@ -804,6 +814,10 @@ a {
 
 .app-footer__description {
   color: #e0e0e0;
+}
+
+.app-footer__form {
+  max-width: 100%;
 }
 
 .app-footer .form-control {
