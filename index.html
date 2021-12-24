@@ -38,7 +38,7 @@
                 <li class="list__item"><a href="#">Review</a></li>
                 <li class="list__item"><a href="#">Blog</a></li>
                 <li class="list__item dropdown">
-                    <button class="dropdown__header" href="#">
+                    <button class="dropdown__header">
                         <span>Pages</span>
                         <i class="bx bx-chevron-down icon"></i>
                     </button>
@@ -67,7 +67,7 @@
                         assets/image/coffee_960w.jpg 960w, 
                         assets/image/coffee_1280w.jpg 1280w, 
                         assets/image/coffee_1920w.jpg 1920w">
-            <img class="block-hero__image" src="assets/image/coffee_960w.jpg 960w" alt="">
+            <img class="block-hero__image" src="assets/image/coffee_960w.jpg" alt="">
         </picture>
         <div class="block-hero__content" data-aos="zoom-out-right">
             <h2 class="block__subtitle">NOW YOU CAN FEEL THE ENERGY</h2>
@@ -270,8 +270,8 @@
     <section class="block posts-block" data-aos="fade-up">
         <h2 class="block__heading">What kind of Coffee we serve for you</h2>
         <p class="block__description">Who are in extremely love with eco friendly system.</p>
-        <ul class="list grid grid--1x2">
-            <li class="list__item post">
+        <div class="grid grid--1x2">
+            <div class="post">
                 <div class="post__image">
                     <picture>
                         <source type="image/webp"
@@ -279,6 +279,7 @@
                         <source type="image/png"
                             srcset="assets/image/performing_coffee_art_320w.png 320w, assets/image/performing_coffee_art_640w.png 640w">
                         <img src="assets/image/performing_coffee_art_320w.png" alt="Performing coffee art">
+                    </picture>
                 </div>
                 <h3 class="post__title">Portable latest Fashion for young women</h3>
                 <p class="post__description">
@@ -286,8 +287,8 @@
                     et dolore.
                 </p>
                 <date class="post__date">31st January, 2018</date>
-            </li>
-            <li class="list__item post">
+            </div>
+            <div class="post">
                 <div class="post__image">
                     <picture>
                         <source type="image/webp"
@@ -296,6 +297,7 @@
                             srcset="assets/image/black_coffee_in_stainless_steel_scoop_320w.png 320w, assets/image/black_coffee_in_stainless_steel_scoop_640w.png 640w">
                         <img src="assets/image/black_coffee_in_stainless_steel_scoop_320w.png"
                             alt="Black coffee in stainless steel scoop">
+                    </picture>
                 </div>
                 <h3 class="post__title">Portable latest Fashion for young women</h3>
                 <p class="post__description">
@@ -303,8 +305,8 @@
                     et dolore.
                 </p>
                 <date class="post__date">31st January, 2018</date>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 
     <footer class="app-footer grid grid--1x3">
