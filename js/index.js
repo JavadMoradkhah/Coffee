@@ -3,6 +3,11 @@ const drawerTogglerIcon = document.getElementById("drawerTogglerIcon");
 const mobileBodyOverly = document.getElementById("mobile-body-overly");
 
 window.onload = function () {
+  // Navigation Menu
+  drawerTogglerIcon.addEventListener("click", () => {
+    toggleDrawer();
+  });
+  // Dropdown
   const dropdowns = document.querySelectorAll(".dropdown");
   if (dropdowns === undefined || dropdowns === null) {
     return;
