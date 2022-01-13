@@ -3,13 +3,15 @@ $color-primary: #b68834;
 $color-headings: #000;
 $color-section-subtitle: #777;
 $color-section-description: #777;
-$color-nav-drawer-bg: rgb(21, 26, 37);
+$color-nav-drawer-bg: rgb(15, 19, 29);
 $color-footer-bg: #31373e;
 
 /* Basic Style */
 *,
 *::before,
 *::after {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 

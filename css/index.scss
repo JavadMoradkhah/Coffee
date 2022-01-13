@@ -2,8 +2,7 @@
 
 /* Variables index.scss */
 $z-index-header: 100;
-$z-index-drawer-shadow: 900;
-$z-index-drawer: 999;
+$z-index-drawer: 99;
 
 /* Lists */
 .list {
@@ -145,71 +144,88 @@ $z-index-drawer: 999;
 }
 
 /* Header */
-.app-header {
+.main-header {
   width: 100%;
+  top: 0;
+  left: 0;
   position: absolute;
-  padding: 1rem 2rem;
+  padding: 1.4rem 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.3s;
   z-index: $z-index-header;
+  overflow: hidden; /* Hiding navigation dropdown on mobile when navigation menu isn't expanded */
 
   @media screen and (min-width: 768px) {
     padding: 2rem 4rem;
+    overflow: visible; /* To show inner dropdown menu on desktop */
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 1024px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.expanded-nav-menu {
+  position: fixed;
+  background-color: $color-nav-drawer-bg;
+}
+
+.nav-toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 4rem;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 }
 
 /* Navigation */
 .navigation {
-  width: 240px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  // background-color: rgba(0, 0, 0, 0.7);
-  background-color: $color-nav-drawer-bg;
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in;
-  z-index: $z-index-drawer;
+  width: 100%;
+  max-height: 0;
 
   @media screen and (min-width: 768px) {
     width: fit-content;
     height: fit-content;
-    position: static;
-    background-color: transparent;
-    transform: none;
+    max-height: unset;
     transition: none;
-    z-index: initial;
   }
 
   &__toggler {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 4rem;
-    border: 0;
-    outline: 0;
-    background-color: transparent;
-    cursor: pointer;
+    @extend .nav-toggler;
+    top: 2rem;
+    right: 2rem;
+    position: absolute;
 
     @media screen and (min-width: 768px) {
       display: none;
     }
   }
 
-  &__list {
+  &__items {
     display: block;
-    padding: 2rem;
 
     @media screen and (min-width: 768px) {
       display: flex;
       padding: 0;
+      margin-top: 0;
     }
 
     > .list__item {
       color: #fff;
-      margin: 1rem 0;
+      margin: 0.5rem 0;
 
       @media screen and (min-width: 768px) {
         margin: 0;
@@ -227,6 +243,10 @@ $z-index-drawer: 999;
       padding: 1rem;
       transition: color 0.3s;
 
+      &:active {
+        color: $color-primary;
+      }
+
       @media (hover: hover) {
         &:hover {
           color: $color-primary;
@@ -237,21 +257,7 @@ $z-index-drawer: 999;
 }
 
 .navigation.open {
-  transform: translateX(0);
-}
-
-.mobile-body-overly {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  &.show {
-    display: block;
-  }
+  max-height: 100vh;
 }
 
 /* Dropdown */
@@ -276,21 +282,22 @@ $z-index-drawer: 999;
     }
   }
 
-  &__list {
+  &__items {
     display: none;
-    position: absolute;
-    top: 100%;
 
     @media screen and (min-width: 768px) {
+      position: absolute;
+      top: 100%;
       left: -25%;
       padding: 1rem;
       border-radius: 0.6rem;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
     }
   }
 
   &.expanded {
-    .dropdown__list {
+    .dropdown__items {
       display: block;
     }
 
@@ -300,7 +307,7 @@ $z-index-drawer: 999;
   }
 
   @media screen and (min-width: 768px) {
-    &:hover &__list {
+    &:hover &__items {
       display: block;
     }
   }
@@ -337,8 +344,12 @@ $z-index-drawer: 999;
 /* Hero Block */
 .block-hero {
   width: 100%;
-  height: 100vh;
+  min-width: 284px;
   position: relative;
+
+  @media screen and (max-width: 300px) {
+    width: 100vw;
+  }
 
   &__image {
     width: 100%;
@@ -346,22 +357,26 @@ $z-index-drawer: 999;
     position: absolute;
     object-fit: cover;
     object-position: center;
+    z-index: -1;
   }
 
   &__content {
     width: 100%;
     height: 100%;
-    padding: 2rem;
+    padding: 12rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
 
     @media screen and (min-width: 768px) {
-      padding: 4rem;
+      padding: 14rem 4rem;
+      padding-bottom: 10rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding-left: calc(((100% - 1024px) / 2) + 4rem);
     }
 
     .block__heading,
@@ -393,9 +408,14 @@ $z-index-drawer: 999;
 .coffee-types-block {
   .list {
     margin-top: 2rem;
+
+    @media screen and (min-width: 1024px) {
+      max-width: 1024px;
+      margin: 4rem auto;
+    }
   }
 
-  .coffee-item {
+  .coffee {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 60px 5px #d4d4d4;
@@ -420,6 +440,7 @@ $z-index-drawer: 999;
     }
 
     &__description {
+      margin-top: 1rem;
       display: block;
       width: 100%;
       color: $color-section-description;
@@ -436,6 +457,8 @@ $z-index-drawer: 999;
     align-items: center;
 
     @media screen and (min-width: 1024px) {
+      max-width: 1024px;
+      margin: 0 auto;
       grid-template-columns: 2fr 3fr;
     }
   }
@@ -501,7 +524,8 @@ $z-index-drawer: 999;
     gap: 1rem;
 
     @media screen and (min-width: 1024px) {
-      padding: 0 10rem;
+      max-width: 1024px;
+      margin: 2rem auto;
     }
   }
 
@@ -530,6 +554,10 @@ $z-index-drawer: 999;
 .statistics-block {
   .list {
     margin-top: 4rem;
+
+    @media screen and (min-width: 1024px) {
+      margin: 4rem calc((100% - 1024px) / 1.5);
+    }
   }
 
   .list__item {
@@ -554,6 +582,8 @@ $z-index-drawer: 999;
 
 /* Posts Block */
 .posts-block {
+  padding-bottom: 5rem;
+
   .grid {
     margin-top: 4rem;
     row-gap: 4rem;
@@ -561,6 +591,11 @@ $z-index-drawer: 999;
     @media screen and (min-width: 768px) {
       gap: 0 4rem;
       padding: 2rem 4rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+      max-width: 1024px;
+      margin: 3rem auto;
     }
   }
 
@@ -584,26 +619,30 @@ $z-index-drawer: 999;
     &__description {
       color: #8f8f8f;
       font-size: 1.8rem;
+      margin: 1rem 0;
     }
 
     &__date {
-      font-weight: 600;
       color: #000;
       font-size: 1.4rem;
+      font-weight: 600;
     }
   }
 }
 
 /* Footer */
-.app-footer {
+.main-footer {
   width: 100%;
   color: #fff;
+  padding: 2rem;
   background-color: $color-footer-bg;
 
-  &.grid {
+  .grid {
     grid-template-columns: 100%;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 1024px) {
+      max-width: 1024px;
+      margin: 0 auto;
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
@@ -622,19 +661,30 @@ $z-index-drawer: 999;
 
   &__description {
     color: #e0e0e0;
+    margin-top: 1rem;
   }
 
   &__form {
     max-width: 100%;
+    margin-top: 2rem;
   }
 
   .form-control {
-    width: fit-content;
+    width: 100%;
+    padding: 0;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: stretch;
     background-color: #fff;
+    border: 0;
 
     &__input {
+      width: 0;
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0;
+      display: block;
       padding: 1rem 1.4rem;
       border: 0;
       outline: 0;
@@ -661,6 +711,7 @@ $z-index-drawer: 999;
   &__social_media {
     display: flex;
     align-items: center;
+    margin-top: 2rem;
 
     .sm-link {
       margin-right: 2rem;
